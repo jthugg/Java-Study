@@ -30,6 +30,59 @@
 - **모든 객체와 인스턴스 변수는 힙 영역에 생성**된다.
 - 객체 생성 시점에 힙 영역에 적재된 데이터는 **미리 설정된 주기에 따라 GC를 통해 제거**된다.
 
+## 🔍 2. 예제로 알아보기
+
+다음 코드 중 각각의 요소는 JVM 메모리 영역 중 어디에 적재되는지 알아보자.
+
+```
+public class Main {
+
+    public static void main(String[] args) {
+        Circle circle = new Circle(3.0);
+        circle.getArea();
+    }
+}
+
+--
+
+public class Circle {
+    
+    private double radius;
+    private static final double PI = 3.141592;
+    
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+    
+    public double getArea() {
+        return this.radius * this.radius * PI;
+    }
+}
+```
+
+### 메서드 영역
+
+#### 코드 세그먼트
+
+- Main, Circle 클래스의 **바이트 코드**
+
+#### 데이터 세그먼트
+
+- public static void main(String[] args);
+- private static final PI = 3.141592;
+- public Circle(double radius);
+- public double getArea();
+
+### 스택 영역
+
+- main() 프레임 내
+  - Circle circle;
+
+### 힙 영역
+
+- new Circle(3.0);
+- private double radius;
+
 ---
 
 ### 📚 References
