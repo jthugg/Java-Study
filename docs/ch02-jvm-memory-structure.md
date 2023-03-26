@@ -1,4 +1,4 @@
-# [Chapter02] JVM 메모리 구조
+# 🚀 [Chapter02] JVM 메모리 구조
 
 ## 📍 0. 들어가기 전에
 
@@ -60,7 +60,7 @@ public class Circle {
 }
 ```
 
-### 메서드 영역
+### 2.1 메서드 영역
 
 #### 코드 세그먼트
 
@@ -73,12 +73,12 @@ public class Circle {
 - public Circle(double radius);
 - public double getArea();
 
-### 스택 영역
+### 2.2 스택 영역
 
 - main() 프레임 내
   - Circle circle;
 
-### 힙 영역
+### 2.3 힙 영역
 
 - new Circle(3.0);
 - private double radius;
